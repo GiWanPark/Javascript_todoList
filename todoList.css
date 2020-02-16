@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+}  
+li{
+    list-style-type: none;
+}
+
+.txtarea_none{
+    display: none;
+}
+
+.txtarea_block{
+    display: block, inline;
+}
