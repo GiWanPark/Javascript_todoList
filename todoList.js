@@ -189,16 +189,21 @@ function init()
 function loadToDos()
 {
     const loadedToDos = localStorage.getItem(TODOS_LS)
+    
     if(loadedToDos !== null)
     {
         const parsedTodos = JSON.parse(loadedToDos);
-        parsedTodos.forEach(function(todo){
-            paintTodo(todo.id, todo.text);
-        });
-        maxId = parsedTodos[parsedTodos.length-1].id;
-        saveTodo();
-
-        loadMemos();
+        if(parsedTodos.length > 0)
+        {
+            parsedTodos.forEach(function(todo){
+                paintTodo(todo.id, todo.text);
+            });
+            
+            maxId = parsedTodos[parsedTodos.length-1].id;
+            saveTodo();
+    
+            loadMemos();
+        }
     }
 }
 
