@@ -33,14 +33,16 @@ function clickHandler()
 
 function paintTodo(id, text)
 {
-    var todoObj = {
+    let todoObj = {
         id: id,
         text: text
     };
 
-    var li = document.createElement("li");
-    var btn = document.createElement("button");
-    var div = document.createElement("div");
+    let li = document.createElement("li");
+    let btn = document.createElement("button");
+    let div = document.createElement("div");
+    let span = document.createElement("span");
+    
 
     li.id = "li_"+id;
     li.addEventListener("dblclick", editTodoTitle);
@@ -49,9 +51,18 @@ function paintTodo(id, text)
     btn.innerText = "del";
 
     div.addEventListener("click", showTxtArea);
-    div.innerText = text;
     div.id = "div_"+id;
+    div.classList += "tooltip";
+    div.innerText = text;
+
+    span.classList += "tooltiptext";
+    span.innerText += `If you click, you can edit title of Todo.
+                        If you double click, you can edit memo of Todo`;
+
+    div.appendChild(span);
     div.appendChild(btn);
+
+    
     
 
     //span.addEventListener("dblclick", delTodo);
