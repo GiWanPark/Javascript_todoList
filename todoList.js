@@ -41,25 +41,25 @@ function paintTodo(id, text)
     let li = document.createElement("li");
     let btn = document.createElement("button");
     let div = document.createElement("div");
-    let span = document.createElement("span");
+//    let span = document.createElement("span");
     
 
     li.id = "li_"+id;
     li.addEventListener("dblclick", editTodoTitle);
 
     btn.addEventListener("click", delTodo);
-    btn.innerText = "del";
+    btn.innerText = "X";
 
     div.addEventListener("click", showTxtArea);
     div.id = "div_"+id;
-    div.classList += "tooltip";
+//    div.classList += "tooltip";
     div.innerText = text;
 
-    span.classList += "tooltiptext";
-    span.innerText += `If you click, you can edit title of Todo.
-                        If you double click, you can edit memo of Todo`;
+//    span.classList += "tooltiptext";
+//    span.innerText += `If you click, you can edit memo of Todo.
+//                        If you double click, you can edit title of Todo`;
 
-    div.appendChild(span);
+//    div.appendChild(span);
     div.appendChild(btn);
 
     
